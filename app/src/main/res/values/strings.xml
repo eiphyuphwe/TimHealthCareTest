@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TimHealthCareTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_name"><font color='#cc0029'>*</font>Name</string>
+    <string name="hint_dob"><font fgcolor='#FF0000'>*</font>Date of birth </string>
+    <string name="hint_gender"><font fgcolor='#FF0000'>*</font>Gender </string>
+    <string name="hint_appt_date"><font fgcolor='#FF0000'>*</font>Appointment date </string>
+    <string name="asteriskred"><font color='#cc0029'>*</font></string>
+</resources>
