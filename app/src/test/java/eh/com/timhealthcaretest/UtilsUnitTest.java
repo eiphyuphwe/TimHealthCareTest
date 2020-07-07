@@ -109,7 +109,7 @@ public class UtilsUnitTest {
 
     }
 
-    @Test
+  /*  @Test
     public void test_invalidDob ( ) {
 
         Long today = MaterialDatePicker.todayInUtcMilliseconds ();
@@ -126,7 +126,7 @@ public class UtilsUnitTest {
         {
 
         }
-    }
+    }*/
 
     @Test
     public void test_validDob ( ) {
