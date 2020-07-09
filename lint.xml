@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="MissingTranslation" severity="warning" />
+    <issue id="ContentDescription" severity="ignore" />
+    <issue id="RiskyLibrary" severity="warning"/>
+    <issue id="MissingVersion">
+        <ignore path="AndroidManifest.xml" />
+    </issue>
+</lint>
