@@ -2,12 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        release {
-            storeFile file('/Users/eiphyuphwe/Documents/AndroidProjects/PersonalProjects/TimHealthCareTest/keystore/Untitled')
-            storePassword '123456'
-            keyAlias = 'timhealth'
-            keyPassword '123456'
-        }
+        config
     }
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -21,8 +16,15 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-release-rules.pro'
+        }
+
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-debug-rules.pro'
         }
     }
 
@@ -32,6 +34,20 @@ android {
     }
 }
 
+// set the keystore if we set the path
+if (KEYSTORE != "") {
+
+    // initialize the signing
+    android.signingConfigs.config.storeFile = file('../keystore/' + KEYSTORE)
+    android.signingConfigs.config.storePassword = STORE_PASSWORD
+    android.signingConfigs.config.keyAlias = KEY_ALIAS
+    android.signingConfigs.config.keyPassword = KEY_PASSWORD
+
+    // set this signing for both build types
+    android.buildTypes.release.signingConfig = android.signingConfigs.config
+    android.buildTypes.debug.signingConfig = android.signingConfigs.config
+
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
