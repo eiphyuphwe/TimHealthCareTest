@@ -15,11 +15,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+       /* release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-release-rules.pro'
-        }
+        }*/
 
         debug {
             minifyEnabled true
@@ -33,14 +33,14 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    lintOptions {
+   /* lintOptions {
         checkReleaseBuilds false
         abortOnError false
-    }
+    }*/
 }
 
 // set the keystore if we set the path
-if (KEYSTORE != "") {
+/*if (KEYSTORE != "") {
 
     // initialize the signing
     android.signingConfigs.config.storeFile = file('./keystore/' + KEYSTORE)
@@ -52,7 +52,7 @@ if (KEYSTORE != "") {
     android.buildTypes.release.signingConfig = android.signingConfigs.config
     android.buildTypes.debug.signingConfig = android.signingConfigs.config
 
-}
+}*/
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
