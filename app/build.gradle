@@ -26,15 +26,15 @@ android {
         }
     }
 
-   /* compileOptions {
+   compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }*/
+    }
 
-   /* lintOptions {
+    lintOptions {
         checkReleaseBuilds false
         abortOnError false
-    }*/
+    }
 }
 
 // set the keystore if we set the path
